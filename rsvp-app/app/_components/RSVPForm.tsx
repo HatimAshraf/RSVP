@@ -5,11 +5,11 @@ import { Calendar } from '@/components/ui/calendar';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Toaster } from '@/components/ui/sonner';
-import { toast } from 'sonner';
 import { MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { submitRSVP } from '../actions/submitRSVP';
+import { toast } from 'sonner';
+import { eventNames } from 'process';
 
 const RSVPForm = () => {
   const [name, setName] = useState('');
@@ -41,10 +41,10 @@ const RSVPForm = () => {
       setEmail('');
       setAccompany(null);
       setAttendance('yes');
-      toast('RSVP submitted successfully');
-    } else {
-      toast('Failed to submit RSVP');
     }
+    toast.success('RSVP has been sent Successfully', {
+      description: content.eventDate + ' at ' + content.eventLocation,
+    });
   };
 
   const openGoogleMaps = () => {
@@ -130,7 +130,16 @@ const RSVPForm = () => {
             </div>
           </RadioGroup>
         </div>
-        <Button type='submit' disabled={isLoading}>
+
+        <Button
+          type='submit'
+          disabled={isLoading}
+          onClick={() =>
+            toast.success('Event has been created', {
+              description: 'Monday, January 3rd at 6:00pm',
+            })
+          }
+        >
           {isLoading ? 'Loading...' : content.submitButton}
         </Button>
       </form>

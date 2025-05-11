@@ -2,7 +2,7 @@ export const content = {
   title: "Wedding RSVP",
   description:
     "We're excited to celebrate our special day with you! Please let us know if you can make it.",
-  eventDate: "2025-06-21", // YYYY-MM-DD format
+  eventDate: "Sunday, December 03, 2023 at 9:00 AM", // YYYY-MM-DD format
   eventDateLabel: "Event Date",
   eventLocation: "Schnoor Bremen, Schnoor, 28195 Bremen, Germany",
   eventLocationName: "Schnoor , 28195 Bremen, Germany",
