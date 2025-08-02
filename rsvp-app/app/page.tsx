@@ -1,9 +1,9 @@
-import RSVPForm from './_components/RSVPForm';
+import Form from './_components/Form';
 
 export default function Home() {
   return (
-    <main className='h-screen flex items-center justify-center'>
-      <RSVPForm />
+    <main>
+      <Form />
     </main>
   );
 }

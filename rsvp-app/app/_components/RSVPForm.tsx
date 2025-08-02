@@ -9,9 +9,10 @@ import { MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { submitRSVP } from '../actions/submitRSVP';
 import { toast } from 'sonner';
-import { eventNames } from 'process';
+// import { eventNames } from 'process';
 
 const RSVPForm = () => {
+  // const [date, setDate] = useState<Date | undefined>(new Date());
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [accompany, setAccompany] = useState<string | null>(null);
@@ -42,9 +43,9 @@ const RSVPForm = () => {
       setAccompany(null);
       setAttendance('yes');
     }
-    toast.success('RSVP has been sent Successfully', {
-      description: content.eventDate + ' at ' + content.eventLocation,
-    });
+    // toast.success('RSVP has been sent Successfully', {
+    //   description: content.eventDate + ' at ' + content.eventLocation,
+    // });
   };
 
   const openGoogleMaps = () => {
@@ -64,13 +65,22 @@ const RSVPForm = () => {
         <Calendar
           mode='single'
           selected={new Date(content.eventDate)}
-          fromDate={new Date(content.eventDate)}
-          toDate={new Date(content.eventDate)}
-          defaultMonth={new Date(content.eventDate)}
+          // onSelect={setDate}
           ISOWeek
-          className='rounded-md border flex flex-col items-center'
+          defaultMonth={new Date(content.eventDate)}
+          className='rounded-md border flex flex-col items-center mb-4'
+          captionLayout='dropdown'
         />
-        <div className='mt-4'>
+        <Label>{content.eventTimeLabel}</Label>
+        <Input
+          type='time'
+          id='time-picker'
+          step='1'
+          defaultValue={content.eventTime}
+          className='mb-4 bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none'
+        />
+        <Label>{content.eventLocationLabel}</Label>
+        <div className=''>
           <Button
             type='button'
             variant={'outline'}
