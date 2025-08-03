@@ -14,7 +14,7 @@ import {
   Sparkles,
   Heart,
 } from 'lucide-react';
-import { content } from '../utils/content';
+import { contents as content } from '../utils/contents';
 
 export default function EnhancedEventForm() {
   const [name, setName] = useState('');
@@ -26,7 +26,7 @@ export default function EnhancedEventForm() {
 
   // Mock content - replace with your actual content object
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     // Simulate API call
@@ -37,13 +37,16 @@ export default function EnhancedEventForm() {
   };
 
   const openGoogleMaps = () => {
-    // Mock function - implement your Google Maps logic
-    console.log('Opening Google Maps...');
+    const encodedLocation = encodeURIComponent(content.eventLocationName);
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`,
+      '_blank'
+    );
   };
 
   return (
     <div className='min-h-screen bg-gradient-to-br py-8 px-4'>
-      <div className='max-w-2xl mx-auto'>
+      <div className='max-w-3xl  mx-auto'>
         {/* Header Section*/}
         <div className='text-center mb-8 animate-fade-in'>
           <div className='inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full mb-4 shadow-lg'>
@@ -128,8 +131,7 @@ export default function EnhancedEventForm() {
               {/* Personal Info Section */}
               <div className='space-y-4'>
                 <h3 className='text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4'>
-                  <User className='w-5 h-5 text-rose-500' />
-                  Your Information
+                  YOUR INFORMATION
                 </h3>
 
                 <div className='grid md:grid-cols-2 gap-4'>

@@ -1,18 +1,25 @@
 export const content = {
-    title: "Salaar & Saira's Wedding Celebration",
-    description:
-      'Join us for a magical evening as we celebrate our love and begin our journey together. Your presence would make our special day even more wonderful.',
-    eventDateLabel: 'Wedding Date',
-    eventDate: '2025-09-16',
-    eventTimeLabel: 'Ceremony Time',
-    eventTime: '16:00',
-    eventLocationLabel: 'Venue Location',
-    eventLocationName: 'Garden Villa, Tuscany',
-    nameLabel: 'Your Full Name',
-    emailLabel: 'Email Address',
-    accompanyLabel: 'Number of Guests',
-    rsvpLabel: 'Will you be attending?',
-    yesOption: "Yes, I'll be there!",
-    noOption: "Sorry, can't make it",
-    submitButton: 'Send RSVP',
-  };
+  title: "Wedding RSVP",
+  description:
+    "We're excited to celebrate our special day with you! Please let us know if you can make it.",
+  eventDate: "2025-12-08", // YYYY-MM-DD format
+  eventTime: "10:30:00", // HH:MM AM/PM format
+  eventTimeLabel: "Event Time",
+  eventDateLabel: "Event Date",
+  eventLocation: "Schnoor Bremen, Schnoor, 28195 Bremen, Germany",
+  eventLocationName: "Schnoor , 28195 Bremen, Germany",
+  eventLocationLabel: "Event Location",
+  nameLabel: "Full Name",
+  emailLabel: "Email Address",
+  accompanyLabel: "Number of Guests",
+  rsvpLabel: "Will you attend?",
+  yesOption: "Yes, I'll be there!",
+  noOption: "Sorry, I can't make it",
+  submitButton: "Send RSVP",
+  thankYouMessage: "Thank you for your response!",
+  viewOnMapButton: "View Location on Google Maps",
+  sendFromEmail: "onboarding@resend.dev",
+  sendToEmail: process.env.EMAIL_TO,
+  nameError: "Please enter your full name",
+  emailError: "Please enter a valid email address",
+};
